@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/style/output.css">
+</head>
+
+<body>
+    <section class="bg-[#333333] w-full h-[100vh] flex justify-center items-center relative">
+        <div id="clickBtn" class="cursor-pointer z-50 overflow-hidden  absolute top-5 left-5 w-12 h-12 flex flex-wrap justify-center content-evenly *:h-2 *:w-10 *:bg-white *:block *:rounded-2xl *:origin-left">
+            <span class="duration-200"></span><span></span><span class="duration-200"></span>
+        </div>
+        <div class=" w-[500px] h-[150px] flex flex-wrap content-center *:w-full *:flex *:justify-center *:text-white">
+            <h1 class="text-4xl">Full Screen Burger Menu</h1>
+            <h3 class="my-2 text-2xl">coded by Nastaran Ghorbanpour</h3>
+            <p class="text-xl">click the menu</p>
+        </div>
+        <ul id="myMenu" class="duration-200 w-full h-[100vh] absolute left-[-100%] bg-black/80 *:w-full *:h-1/4 *:text-white *:text-3xl *:flex *:justify-center *:items-center *:uppercase *:duration-300 *:hover:bg-[#CECECE] *:hover:text-4xl *:hover:text-neutral-700">
+            <li>home</li>
+            <li>about</li>
+            <li>contact</li>
+            <li>gallery</li>
+        </ul>
+    </section>
+
+</body>
+<script>
+    const clickBtn = document.getElementById('clickBtn')
+    const myMenu = document.getElementById('myMenu')
+    let flag = 3
+
+
+    clickBtn.addEventListener('click' , function(){
+        if(flag%2){
+            clickBtn.children[1].style.transform='translateX(100px)'
+            clickBtn.children[0].style.transform='rotate(45deg)'
+            clickBtn.children[2].style.transform='rotate(-45deg)'
+            myMenu.style.left='0px'
+        }else{
+            clickBtn.children[1].style.transform='translateX(0px)'
+            clickBtn.children[0].style.transform='rotate(0deg)'
+            clickBtn.children[2].style.transform='rotate(0deg)'
+            myMenu.style.left='-100%'
+            console.log('return');  
+        }
+        flag++
+    })
+</script>
+</html>
